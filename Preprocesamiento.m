@@ -5,7 +5,7 @@ d = dir(fullfile('Training_Batch'));  %Qué archivos hay en la carpeta 'Trainng_B
 d = struct2cell(d)'; %Pasar de estructura a celda
 d = natsortfiles(d(:,1)); %Organizar en orden natural los archivos.
 
-for i = 134:134 %65 volumenes de entrenamiento
+for i = 198:199 %65 volumenes de entrenamiento
     s_Training_Batch_v = fullfile('Training_Batch',d{i}); %Dirección completa
     e_CT_v = load_nii(s_Training_Batch_v); %Cargar archivo .NII (CT)
     m_CT_v = e_CT_v.img; %Obtener solo los scans por CT
@@ -16,6 +16,7 @@ for i = 134:134 %65 volumenes de entrenamiento
         m_CT_pe_v(:,:,j) = histeq(m_CT_p_v,x2); %Ecualizar
     end
     save(fullfile('Training_Batch_P',strcat(strrep(d{i},'.nii','.'),'mat')),'m_CT_pe_v');
+    clear m_CT_pe_v m_CT_p_v
 end
 
 
