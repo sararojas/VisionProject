@@ -30,3 +30,9 @@ Para saber cual rama somos : git branch
 PAra cambiarnos de rama: git checkout <RAMA>
 Para crear una rama git checkout -b <Nombre RAMA>
 Para mostrar info de la rama: git remote show <RAMA> 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%
+
+CORRER en MATLAB /usr/local/matlab/bin/matlab -nojvm  < miScript.m
